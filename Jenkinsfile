@@ -18,11 +18,7 @@ pipeline {
 				sh 'npm test'
 			}
 		}
-		stage('Deliver') {
-			steps {
-				input message: 'Finished using the web site ?'
-			}
-		}
+		
 		stage('Deploiement Ansible') {
 			steps{
 				ansiblePlaybook (
